@@ -39,4 +39,9 @@ public class Course {
         Arrays.stream(lessons).forEach(course::setLesson);
         return course;
     }
+    public static Course updateCourse(Course course,Student student, Lesson... lessons) {
+        course.setStudent(student);
+        Arrays.stream(lessons).forEach(course::setLesson);
+        return course;
+    }
 }

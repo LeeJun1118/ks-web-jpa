@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <title>Update Course</title>
+</head>
+<body>
+<div class="container">
+    <h3>Update Course</h3>
+    <form action="/courses" th:action="@{/course/update/{id}(id=${course.id})}" th:object="${course}" method="post">
+        <div class="form-group">
+            <label for="student">학생</label>
+            <select name="studentId" id="student" class="form-control">
+                <option th:each="student : ${students}"
+                        th:value="${student.id}" th:text="${student.name}"/>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="lesson">수업</label>
+            <select name="lessonId" id="lesson" class="form-control">
+                <option th:each="lesson : ${lessons}"
+                        th:value="${lesson.id}" th:text="${lesson.name}"/>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

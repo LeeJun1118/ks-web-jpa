@@ -21,10 +21,16 @@
                 <td th:text="${lesson.name}"></td>
                 <td th:text="${lesson.quota}"></td>
                 <td>
-                    <a href="#" class="btn btn-primary" role="button">수정</a>
+                    <!--<a href="#" class="btn btn-primary" role="button">수정</a>-->
+                    <a th:href="@{/lesson/update/{id}(id=${lesson.id})}" class="btn btn-primary">
+                        <i class="fas fa-user-edit ml-2">수정</i>
+                    </a>
                 </td>
                 <td>
-                    <a href="#" class="btn btn-primary" role="button">삭제</a>
+                    <!--<a href="#" class="btn btn-primary" role="button">삭제</a>-->
+                    <a th:href="@{/lesson/delete/{id}(id=${lesson.id})}" class="btn btn-primary">
+                        <i class="fas fa-user-times ml-2">삭제</i>
+                    </a>
                 </td>
             </tr>
             </tbody>
